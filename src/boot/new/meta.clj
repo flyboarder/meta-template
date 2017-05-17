@@ -4,7 +4,7 @@
 (def render (renderer "meta"))
 
 (defn meta
-  "FIXME: write documentation"
+  "Genrate an empty [meta] project."
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
