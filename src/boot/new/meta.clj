@@ -1,5 +1,7 @@
 (ns boot.new.meta
-  (:require [boot.new.templates :refer [renderer name-to-path ->files]]))
+  (:refer-clojure :exclude [meta])
+  (:require [boot.util :as util]
+            [boot.new.templates :refer [renderer name-to-path ->files]]))
 
 (def render (renderer "meta"))
 
@@ -8,6 +10,10 @@
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
-    (println "Generating fresh 'boot new' meta project.")
+    (util/info "Generating an empty [meta] project...\n")
     (->files data
-             ["src/{{sanitized}}/foo.clj" (render "foo.clj" data)])))
+             ["build.boot"                    (render "build.boot"   data)]
+             ["src/.gitkeep"                  (render ".gitkeep"     data)]
+             ["assets/.gitkeep"               (render ".gitkeep"     data)]
+             ["resources/favicon.ico"         (render "favicon.ico"  data)]
+             ["resources/config/default.json" (render "default.json" data)])))
