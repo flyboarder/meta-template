@@ -1,4 +1,11 @@
-(set-env! :dependencies '[[degree9/meta "0.3.0-SNAPSHOT"]])
-(require '[meta.boot :refer :all])
+;; Powered by Meta ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(initialize)
+;; dependency
+(set-env! :dependencies '[[degree9/meta "0.4.0"]])
+
+;; require
+(require '[meta.boot :as m])
+
+;; init
+(m/initialize)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
