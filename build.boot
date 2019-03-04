@@ -11,7 +11,7 @@
  pom {:project 'degree9/meta-template})
 
 (deftask develop
-  ""
+  "Build meta-template for local development."
   []
   (comp (version
           :develop true
@@ -19,3 +19,11 @@
           :pre-release 'snapshot)
         (watch)
         (build-jar)))
+
+(deftask deploy
+  "Deploy meta-template to clojars."
+  []
+  (comp
+    (version)
+    (build-jar)
+    (push-release)))
