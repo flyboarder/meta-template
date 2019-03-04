@@ -17,6 +17,7 @@
              ["version.properties"            (render "version.properties" data)]
              ["package.json"                  (render "package.json"       data)]
              ["shadow-cljs.edn"               (render "shadow-cljs.edn"    data)]
+             ["env.boot"                      (render "env.boot"           data)]
              ["src/.gitkeep"                  (render ".gitkeep"           data)]
              ["assets/.gitkeep"               (render ".gitkeep"           data)]
              ["resources/favicon.ico"         (render "favicon.ico"        data)]
