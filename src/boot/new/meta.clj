@@ -12,8 +12,12 @@
               :sanitized (name-to-path name)}]
     (util/info "Generating an empty [meta] project...\n")
     (->files data
-             ["build.boot"                    (render "build.boot"   data)]
-             ["src/.gitkeep"                  (render ".gitkeep"     data)]
-             ["assets/.gitkeep"               (render ".gitkeep"     data)]
-             ["resources/favicon.ico"         (render "favicon.ico"  data)]
-             ["resources/config/default.json" (render "default.json" data)])))
+             ["build.boot"                    (render "build.boot"         data)]
+             ["boot.properties"               (render "boot.properties"    data)]
+             ["version.properties"            (render "version.properties" data)]
+             ["package.json"                  (render "package.json"       data)]
+             ["shadow-cljs.edn"               (render "shadow-cljs.edn"    data)]
+             ["src/.gitkeep"                  (render ".gitkeep"           data)]
+             ["assets/.gitkeep"               (render ".gitkeep"           data)]
+             ["resources/favicon.ico"         (render "favicon.ico"        data)]
+             ["resources/config/default.json" (render "default.json"       data)])))

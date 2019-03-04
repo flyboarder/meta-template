@@ -1,0 +1,23 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[degree9/meta "0.4.0"]
+  [degree9/boot-shadow "2.6.6-0"]]
+
+ ; http server
+ :http {:host "127.0.0.1"}
+
+ ; build configurations
+ :builds
+ {:client  {:target :browser
+            :output-dir "client"
+            :asset-path "/client"
+            :modules {:app {:entries [app.index]}}}
+
+  :server  {:target :node-script
+            :main app.server/init
+            :output-dir "app"
+            :output-to "nodejs.js"
+            :release {:compiler-options {:optimizations :simple}}}}}
